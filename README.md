@@ -94,7 +94,3 @@ To access JSAcademy from other devices on your network:
 - Make sure your firewall allows connections on ports 8000 and 5173
 - Both your computer and other devices must be on the same network
 - For security, only use these methods on trusted networks
-
-## License
-
-The JSAcademy platform is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
