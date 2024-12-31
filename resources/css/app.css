@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Navbar and Sidebar */
+.navbar, .sidebar {
+    background-color: #2F4F4F;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, #D0F0C0, #98FB98);
+}
+
+/* Buttons */
+button {
+    background-color: #28A745;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #218838;
+}
+
+/* Text Colors */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    color: #343A40;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar, .sidebar {
+        padding: 10px;
+    }
+    .welcome-section {
+        padding: 20px;
+    }
+}
