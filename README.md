@@ -89,8 +89,49 @@ To access JSAcademy from other devices on your network:
    http://[your-ip-address]:8000
    ```
 
+### Running in Different Networks
+
+When moving to a different network, you'll need to update your configuration with the new IP address:
+
+1. Find your new IP address:
+   ```bash
+   ipconfig    # On Windows
+   ifconfig    # On macOS/Linux
+   ```
+
+2. Update `.env` file:
+   ```env
+   APP_URL=http://[your-new-ip]:8000
+   VITE_APP_URL=http://[your-new-ip]:5173
+   ```
+
+3. Update `vite.config.js`:
+   ```javascript
+   server: {
+       host: '0.0.0.0',
+       hmr: {
+           host: '[your-new-ip]'  // Update with new IP
+       },
+   }
+   ```
+
+4. Clear Laravel cache:
+   ```bash
+   php artisan config:clear
+   php artisan cache:clear
+   ```
+
+5. Rebuild and start servers:
+   ```bash
+   npm run build
+   php artisan serve --host=0.0.0.0 --port=8000
+   npm run dev -- --host
+   ```
+
 ### Notes
-- Replace `[your-ip-address]` with your actual IP address (e.g., 192.168.1.100)
+- Replace `[your-ip-address]` or `[your-new-ip]` with your actual IP address (e.g., 192.168.1.100)
 - Make sure your firewall allows connections on ports 8000 and 5173
 - Both your computer and other devices must be on the same network
 - For security, only use these methods on trusted networks
+- When changing networks, always update both `.env` and `vite.config.js` files
+- Remember to rebuild assets and clear cache after changing networks
